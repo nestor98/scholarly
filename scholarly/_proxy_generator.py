@@ -482,7 +482,7 @@ class ProxyGenerator(object):
         freeproxy = FreeProxy(rand=False, timeout=timeout)
         if not hasattr(self, '_dirty_freeproxies'):
             self._dirty_freeproxies = set()
-        all_proxies = freeproxy.get_proxy_list()
+        all_proxies = freeproxy.get_proxy_list(True)
         all_proxies.reverse()  # Try the older proxies first
 
         t1 = time.time()
