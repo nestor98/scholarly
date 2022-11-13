@@ -489,7 +489,7 @@ class ProxyGenerator(object):
         while (time.time()-t1 < wait_time):
             proxy = all_proxies.pop()
             if not all_proxies:
-                all_proxies = freeproxy.get_proxy_list()
+                all_proxies = freeproxy.get_proxy_list(True)
             if proxy in self._dirty_freeproxies:
                 continue
             proxies = {'http': proxy, 'https': proxy}
